@@ -14,7 +14,7 @@ $this->load->model('User_Login_Model');
 $validate=$this->User_Login_Model->validatelogin($emailid,$password,$status);
 if($validate)
 {
-$this->session->set_userdata('uid',$validate->$id);
+$this->session->set_userdata('uid',$validate);
 setcookie('uid',$validate->uid,time() + (1*60*60));
 return redirect('user/dashboard');
 } else{
