@@ -16,7 +16,7 @@ if( $dbstatus==$status){
 return $account->id;
 } else {
 return NULL;
-$this->session->set_flashdata('error', 'Your accounis is not active contact admin');
+$this->session->set_flashdata('error', 'Your account is not active contact admin');
 redirect('user/login');
 }
 }
