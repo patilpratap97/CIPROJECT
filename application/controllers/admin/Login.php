@@ -13,8 +13,8 @@ $this->load->model('Admin_Login_Model');
 $validate=$this->Admin_Login_Model->validatelogin($username,$password);
 if($validate)
 {
-$this->session->set_userdata('adid',$validate);
-setcookie('adid',$validate->adid,time() + (1*60*60));
+$this->session->set_userdata("adid",$validate);
+setcookie("adid",$validate->adid,time() + (1*60*60));
 return redirect('admin/dashboard');
 } else{
 $this->session->set_flashdata('error', 'Invalid details. Please try again with valid details');

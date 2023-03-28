@@ -5,7 +5,7 @@
 <body>
 <?php
 echo $this->session->flashdata('email_sent');
-echo form_open('/Sendemail/send_mail');
+echo form_open('/email/send_mail');
 ?>
 <input type = "email" name = "email" required />
 <input type = "submit" value = "SEND MAIL">
