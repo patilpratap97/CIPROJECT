@@ -1,10 +1,10 @@
 <?php
-print_r($_COOKIE['uid']);
+// print_r($_COOKIE['uid']);
 defined('BASEPATH') OR exit('No direct script access allowed');
 Class Signup extends CI_Controller {
 
 public function index(){
-    // $this->load->library('encryption');
+    $this->load->library('encryption');
 $this->form_validation->set_rules('firstname','First Name','required|alpha');
 $this->form_validation->set_rules('lastname','Last  Name','required|alpha');
 $this->form_validation->set_rules('emailid','Email id','required|valid_email|is_unique[tblusers.emailId]');
@@ -17,7 +17,7 @@ $lname=$this->input->post('lastname');
 $emailid=$this->input->post('emailid');
 $mnumber=$this->input->post('mobilenumber');
 $password=$this->input->post('password');
-//  $password=$this->encryption->$password;
+ $password=$this->encryption->encrypt($password);
 $this->session->set_userdata("uid",$validate);
 setcookie("uid",$password,time() + (1*60*60));
 $status=1;
