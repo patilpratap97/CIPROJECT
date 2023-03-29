@@ -7,6 +7,7 @@ public function index(){
 $this->form_validation->set_rules('emailid','Email id','required|valid_email');
 $this->form_validation->set_rules('password','Password','required');
 if($this->form_validation->run()){
+
 $emailid=$this->input->post('emailid');
 $password=$this->input->post('password');
 $status=1;	
