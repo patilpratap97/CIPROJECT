@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 Class Login extends CI_Controller {
 
-
 public function index(){
 $this->form_validation->set_rules('emailid','Email id','required|valid_email');
 $this->form_validation->set_rules('password','Password','required');
@@ -21,7 +20,6 @@ return redirect('user/dashboard');
 } else{
 $this->session->set_flashdata('error', 'Invalid details. Please try again with valid details');
 redirect('user/login');
-
 } 
 
 } else {

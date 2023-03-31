@@ -11,6 +11,7 @@ $this->form_validation->set_rules('emailid','Email id','required|valid_email|is_
 $this->form_validation->set_rules('mobilenumber','Mobile Number','required|numeric|exact_length[10]');
 $this->form_validation->set_rules('password','Password','required|min_length[6]');
 $this->form_validation->set_rules('confirmpassword','Confirm Password','required|min_length[6]|matches[password]');
+
 if($this->form_validation->run()){
 $fname=$this->input->post('firstname');
 $lname=$this->input->post('lastname');
